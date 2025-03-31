@@ -14,6 +14,7 @@
         }
 
         body {
+            font-size: 24px;
             background-color: #f9f9fb;
             color: #333;
             min-height: 100vh;
@@ -49,8 +50,15 @@
             gap: 10px;
         }
 
+        .log-in-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            flex-wrap: nowrap;
+        }
+
         .log-in-title {
-            font-size: 26px;
+            font-size: 32px;
             font-weight: 500;
             color: #444;
         }
@@ -125,15 +133,13 @@
 
         .card:hover {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-            
             border: 1px solid #A791F4;
             background: #F6F4FE;
         }
 
         .card-title {
             color: #333;
-            font-size: 25px;
+            font-size: 36px;
             font-weight: 500;
             margin-bottom: 5px;
             z-index: 2;
@@ -147,7 +153,7 @@
 
 
         .card-description {
-            font-size: 16px;
+            /*font-size: 18px;*/
             color: #888;
             line-height: 1.5;
             z-index: 2;
@@ -161,7 +167,7 @@
        
       
       .card-square-title {
-            font-size: 20px;
+            /*font-size: 20px;*/
             text-align: center;
             font-weight: 500;
             margin-bottom: 10px;
@@ -217,7 +223,7 @@
         .card:hover .little-icon {
             
             stroke: #A791F4;
-            
+
             
         }
 
@@ -247,7 +253,7 @@
         }
         
         /* 平板尺寸 */
-        @media (min-width: 812px) and (max-width: 1279px) {
+        @media (min-width: 881px) and (max-width: 1279px) {
             .main-content {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -259,9 +265,15 @@
         }
         
         /* 手機尺寸 */
-        @media (max-width: 811px) {
+        @media (max-width: 880px) {
             .main-content {
                 grid-template-columns: 1fr;
+            }
+
+            .log-in-wrapper {
+            
+            flex-direction: column; /* 手機也顯示垂直兩行 */
+            white-space: normal;
             }
             
 
@@ -287,7 +299,10 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="log-in-title">您好，Clotho 公司 | Emma</div>
+            <div class="log-in-wrapper">
+                <div class="log-in-title">您好，</div>
+                <div class="log-in-title">Clotho 公司 | Emma</div>
+            </div>
             <button class="logout-btn">登出</button>
         </header>
 
